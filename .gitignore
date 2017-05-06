@@ -28,6 +28,11 @@ Icon
 .idea/
 
 # --------------------
+# Visual Studio Code
+# --------------------
+.vscode/
+
+# --------------------
 # Netbeans Files
 # --------------------
 nbproject/private/
