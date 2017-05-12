@@ -1,15 +1,9 @@
 {
-  "name": "mean",
-  "description": "MEAN.io: A fullstack JavaScript framework powered by MongoDB, ExpressJS, AngularJS, NodeJS.",
-  "version": "0.9.1",
+  "name": "peerSurvey",
+  "description": "A peer surveying tool web app using MEAN stack: MongoDB, ExpressJS, AngularJS, NodeJS.",
+  "version": "0.0.0",
   "private": false,
-  "author": "Linnovate <mean@linnovate.net>",
-  "contributors": "https://github.com/linnovate/mean/graphs/contributors",
-  "mean": "1.0",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/linnovate/mean.git"
-  },
+  "author": "ggibsen",
   "license": "MIT",
   "scripts": {
     "start": "cross-env DEBUG=cluster node server",
