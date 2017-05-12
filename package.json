@@ -1,5 +1,5 @@
 {
-  "name": "peerSurvey",
+  "name": "peer-survey",
   "description": "A peer surveying tool web app using MEAN stack: MongoDB, ExpressJS, AngularJS, NodeJS.",
   "version": "0.0.0",
   "private": false,
