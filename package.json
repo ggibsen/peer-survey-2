@@ -105,7 +105,7 @@
     "supertest": "latest",
     "through": "latest",
     "url-loader": "latest",
-    "webpack": "latest",
+    "webpack": "^1.15.0",
     "webpack-dev-middleware": "latest",
     "webpack-dev-server": "latest",
     "webpack-hot-middleware": "latest",
