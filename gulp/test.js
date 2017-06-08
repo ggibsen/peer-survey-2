@@ -1,6 +1,7 @@
 'use strict';
 
 var gulp = require('gulp');
+var gutil = require('gulp-util');
 var gulpLoadPlugins = require('gulp-load-plugins');
 // var request = require('request')
 var KarmaServer = require('karma').Server;
@@ -12,17 +13,25 @@ var plugins = gulpLoadPlugins();
 process.env.NODE_ENV = 'test';
 
 gulp.task('test', ['startServer', 'stopServer']);
+
+gulp.task('qtest', ['runMocha'], function () {
+  gutil.log('Finished qtest');
+  process.exit();
+});
+
 gulp.task('startServer', function (done) {
   var promise = require('../server.js');
   promise.then(function (app) {
     done()
   })
 });
+
 gulp.task('stopServer', ['runKarma'], function () {
   process.exit();
 });
+
 gulp.task('runMocha', ['startServer'], function () {
-  return gulp.src('./packages/**/server/tests/**/*.spec.js', {read: false})
+  return gulp.src('./packages/**/server/tests/**/*.spec.js', { read: false })
     .pipe(plugins.mocha({
       reporter: 'spec'
     }))
@@ -31,6 +40,7 @@ gulp.task('runMocha', ['startServer'], function () {
       this.emit('end')
     });
 });
+
 gulp.task('runKarma', ['runMocha'], function (done) {
   var karma = new KarmaServer({
     configFile: path.join(__dirname, '/../karma.conf.js'),
@@ -38,6 +48,5 @@ gulp.task('runKarma', ['runMocha'], function (done) {
   }, function () {
     done();
   });
-
   karma.start();
 });
