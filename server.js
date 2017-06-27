@@ -31,7 +31,8 @@ if ((cluster.isMaster) &&
   // Create a worker for each CPU
   for (var i = 0; i < cpuCount; i += 1) {
     debug(`forking ${i}`)
-    cluster.fork()
+    
+    .fork()
   }
 
   // Listen for dying workers
@@ -51,7 +52,7 @@ if ((cluster.isMaster) &&
   mean.serve({ workerid: workerId }, function (app) {
     var config = app.getConfig()
     var port = config.https && config.https.port ? config.https.port : config.http.port
-    debug(`MEAN app started on port ${port} (${process.env.NODE_ENV}) with cluster worker id ${workerId}`)
+    debug(`Peer Survey started on port ${port} (${process.env.NODE_ENV}) with cluster worker id ${workerId}`)
 
     deferred.resolve(app)
   })
