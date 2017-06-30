@@ -1,4 +1,4 @@
-<div layout="column" flex data-ng-controller="IndexController">
+<div layout="column" flex ng-controller="IndexController as psController">
   <md-content layout="column" layout-padding flex>
     <md-divider></md-divider>
     <div layout="row" layout-align="space-around start" layout-padding flex>
@@ -7,6 +7,16 @@
         <h1>Welcome to Peer Survey</h1>
         <p class="md-headline">Let's type your evaluation to store in MongoDB...</p>
         <div flex>
+          <ul>
+            <li ng-repeat="eval in psController.evalList">
+              <span>{{eval}}</span>
+            </li>
+          </ul>
+          <form ng-submit="psController.addEval()">
+            <input type="text" ng-model="psController.evaluation" placeholder="your eval here..." size="30" />
+            <input type="submit" value="Add Eval" />
+            <!--<h3>Evaluation is: {{evaluation}}</h3>-->
+          </form>
         </div>
       </div>
     </div>
