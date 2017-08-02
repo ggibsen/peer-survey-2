@@ -23,7 +23,7 @@ angular.module('mean.system').controller('IndexController', ['$scope', 'Global',
     psController.addEval = function () {
       psController.evalList.push(psController.evaluation);
       psController.evaluation = '';
-    }
+    };
 
     $scope.$watch(function () {
       for (var i = 0; i < $scope.sites.length; i += 1) {
